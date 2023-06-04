@@ -24,6 +24,10 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
+    final numTotalQuestions = questions.length;
+    final numRightQuestions = getSummaryData()
+        .where((data) => data['correct_answer'] == data['user_answer']);
+
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -32,9 +36,9 @@ class ResultScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'dasdasdasdasdasdadsasd',
-              style: TextStyle(backgroundColor: Colors.white),
+            Text(
+              'You answered $numRightQuestions out of $numTotalQuestions question currectly!',
+              style: const TextStyle(backgroundColor: Colors.white),
               textAlign: TextAlign.center,
             ),
             const SizedBox(
