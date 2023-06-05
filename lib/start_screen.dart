@@ -29,8 +29,8 @@ class StartScreen extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 40.0),
+          ButtonTheme(
+            minWidth: 10,
             child: OutlinedButton.icon(
               style: OutlinedButton.styleFrom(
                   foregroundColor: Colors.white,
